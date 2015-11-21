@@ -1,0 +1,36 @@
+{
+  "name": "@stackscz/reactor",
+  "version": "1.0.0",
+  "description": "react + redux frontend codebase",
+  "main": "lib/index.js",
+  "scripts": {
+    "dev": "node ./node_modules/@stackscz/webpack-configs/react/dev-server",
+    "build:dev": "webpack --config ./node_modules/@stackscz/webpack-configs/react/dev",
+    "build:dev:watch": "webpack --watch --config ./node_modules/@stackscz/webpack-configs/react/dev",
+    "build:prod": "webpack -p --config ./node_modules/@stackscz/webpack-configs/react/prod",
+    "build": "npm run build:dev && npm run build:prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stackscz/reactor.git"
+  },
+  "author": "@stackscz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stackscz/reactor/issues"
+  },
+  "homepage": "https://github.com/stackscz/reactor#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.5",
+    "lodash": "^3.10.1",
+    "react": "^0.14.2",
+    "react-gateway": "^1.1.0",
+    "react-modal2": "^2.0.0"
+  },
+  "devDependencies": {
+    "@stackscz/webpack-configs": "stackscz/webpack-configs",
+    "babel-preset-es2015": "^6.1.18",
+    "babel-preset-react": "^6.1.18",
+    "babel-preset-stage-0": "^6.1.18"
+  }
+}
