@@ -20,6 +20,6 @@ export default class LanguageSelector extends React.Component {
 
 }
 
-LanguageSelector.props = {
+LanguageSelector.defaultProps = {
 	flagClass: 'flag-icon flag-icon-'
 };
