@@ -9,8 +9,10 @@ export default class LanguageSelector extends React.Component {
 				{this.props.languages.map((l, key)=> {
 					var flagClass = this.props.flagClass + l.flag;
 					return (
-						<li key={key}>
-							<span className={flagClass}></span>{l.name}
+						<li key={key} className="LanguageSelector-flagWrapper">
+							<a href="" className="LanguageSelector-link">
+								<span className={flagClass}></span>
+							</a>
 						</li>
 					);
 				})}
@@ -21,5 +23,5 @@ export default class LanguageSelector extends React.Component {
 }
 
 LanguageSelector.defaultProps = {
-	flagClass: 'flag-icon flag-icon-'
+	flagClass: 'LanguageSelector-flag flag-icon flag-icon-'
 };

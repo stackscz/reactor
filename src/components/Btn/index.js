@@ -4,10 +4,11 @@ import _ from 'lodash';
 export default class Btn extends React.Component {
 
 	render() {
-		var className = 'Btn ' + this.props.className;
+		var { className, children, ...other } = this.props;
+		var newClassName = 'Btn ' + className;
 		return (
-			<button className={className}>
-				{this.props.children}
+			<button {...other} className={newClassName}>
+				{children}
 			</button>
 		);
 	}
