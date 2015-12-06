@@ -5,18 +5,22 @@ import ReactGateway from 'react-gateway';
 export default class Modal extends React.Component {
 
 	render() {
-		return (
-			<ReactGateway to={document.getElementsByClassName('Machine-screen')[0]}>
-				<ReactModal2
-					onClose={this.props.onClose}
-					closeOnEsc={this.props.closeOnEsc}
-					closeOnBackdropClick={this.props.closeOnBackdropClick}
-					backdropClassName='Modal'
-					modalClassName='Modal-content'>
-					{this.props.children}
-				</ReactModal2>
-			</ReactGateway>
-		);
+		let element = document.getElementById(this.props.on);
+		if (element) {
+			return (
+				<ReactGateway to={element}>
+					<ReactModal2
+						onClose={this.props.onClose}
+						closeOnEsc={this.props.closeOnEsc}
+						closeOnBackdropClick={this.props.closeOnBackdropClick}
+						backdropClassName='Modal'
+						modalClassName='Modal-content'>
+						{this.props.children}
+					</ReactModal2>
+				</ReactGateway>
+			);
+		}
+		return null;
 	}
 }
 

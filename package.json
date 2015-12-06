@@ -1,6 +1,6 @@
 {
   "name": "@stackscz/reactor",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "react + redux frontend codebase",
   "main": "lib/index.js",
   "scripts": {
@@ -25,12 +25,14 @@
     "classnames": "^2.2.1",
     "history": "^1.13.1",
     "lodash": "^3.10.1",
+    "object-hash": "^0.9.3",
     "react": "^0.14.2",
     "react-gateway": "^1.1.0",
     "react-modal2": "^2.0.0",
     "react-redux": "^4.0.0",
-    "react-router": "^1.0.0",
-    "redux": "^3.0.4"
+    "react-router": "^1.0.2",
+    "redux": "^3.0.4",
+    "redux-router": "v1.0.0-beta5"
   },
   "devDependencies": {
     "@stackscz/webpack-configs": "stackscz/webpack-configs",

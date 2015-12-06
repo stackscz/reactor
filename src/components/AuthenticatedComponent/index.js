@@ -6,40 +6,33 @@ export function requireAuthentication(Component) {
 
 	class AuthenticatedComponent extends React.Component {
 
-		componentWillMount () {
+		componentWillMount() {
 			this.checkAuth();
 		}
 
-		componentWillReceiveProps (nextProps) {
+		componentWillReceiveProps(nextProps) {
 			this.checkAuth();
 		}
 
-		checkAuth () {
-			if (!this.props.isAuthenticated) {
+		checkAuth() {
+			if (!this.props.user) {
 				let redirectAfterLogin = this.props.location.pathname;
-				this.props
-					.dispatch(pushState(null, `/login?next=${redirectAfterLogin}`));
+				this.props.dispatch(pushState(null, `/login?next=${redirectAfterLogin}`));
 			}
 		}
 
-		render () {
-			return (
-				<div>
-					{this.props.isAuthenticated === true
-						? <Component {...this.props}/>
-						: null
-					}
-				</div>
-			)
-
+		render() {
+			return this.props.user
+				? (<Component {...this.props}/>)
+				: null
 		}
 	}
 
-	const mapStateToProps = (state) => ({
-		token: state.auth.token,
-		userName: state.auth.userName,
-		isAuthenticated: state.auth.isAuthenticated
-	});
+	const mapStateToProps = (state) => {
+		return {
+			user: state.auth.user
+		}
+	};
 
 	return connect(mapStateToProps)(AuthenticatedComponent);
 

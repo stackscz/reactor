@@ -23,7 +23,7 @@ export default class Btn extends React.Component {
 
 
 		return this.props.to ?
-			(<Link {...other} className={newClassName}>{children}</Link>)
+			(<Link {...other} className={newClassName} onlyActiveOnIndex={true} activeClassName="isActive">{children}</Link>)
 			:
 			(<a {...other} className={newClassName}>{children}</a>);
 	}
