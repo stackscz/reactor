@@ -72,13 +72,11 @@
   clear: both;
 }
 .Btn {
-  display: inline-block;
   margin-bottom: 0;
   font-weight: normal;
   text-align: center;
   vertical-align: middle;
   touch-action: manipulation;
-  cursor: pointer;
   background-image: none;
   border: 1px solid transparent;
   white-space: nowrap;
@@ -90,10 +88,13 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  cursor: pointer;
+  display: inline-block;
   color: black;
   border: 1px solid;
   border-radius: 0;
   background: none;
+  padding: 0;
 }
 .Btn:focus,
 .Btn:active:focus,
@@ -130,6 +131,9 @@ fieldset[disabled] .Btn {
 a.Btn.disabled,
 fieldset[disabled] a.Btn {
   pointer-events: none;
+}
+.Btn--block {
+  display: block;
 }
 .Modal {
   position: absolute;

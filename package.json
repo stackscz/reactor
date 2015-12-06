@@ -22,6 +22,7 @@
   "homepage": "https://github.com/stackscz/reactor#readme",
   "dependencies": {
     "bootstrap": "^3.3.5",
+    "classnames": "^2.2.1",
     "history": "^1.13.1",
     "lodash": "^3.10.1",
     "react": "^0.14.2",
