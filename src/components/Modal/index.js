@@ -5,7 +5,7 @@ import ReactGateway from 'react-gateway';
 export default class Modal extends React.Component {
 
 	render() {
-		let element = document.getElementById(this.props.on);
+		const element = document.getElementById(this.props.on);
 		if (element) {
 			return (
 				<ReactGateway to={element}>
@@ -33,7 +33,5 @@ Modal.propTypes = {
 Modal.defaultProps = {
 	closeOnEsc: true,
 	closeOnBackdropClick: true,
-	onClose: ()=> {
-		console.log('mumble mumble');
-	}
+	onClose: ()=> {}
 };

@@ -1,11 +1,10 @@
 import React from 'react';
-import _ from 'lodash';
 
 export default class Select extends React.Component {
-	_renderOption(data) {
+	static _renderOption(data) {
 		return (
 			<option value={data.value}>{data.label}</option>
-		)
+		);
 	}
 
 	_generateOptions() {

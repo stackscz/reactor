@@ -16,7 +16,7 @@ export default class Pagination extends React.Component {
 	}
 
 	_getPagesCount() {
-		return Math.ceil(this.props.count / this.props.limit)
+		return Math.ceil(this.props.count / this.props.limit);
 	}
 
 	_getPageNumber() {
@@ -36,7 +36,7 @@ export default class Pagination extends React.Component {
 					data-disabled={index == this._getPageNumber()}
 				>{index}</a>
 			</li>
-		)
+		);
 	}
 
 	_renderPagination() {

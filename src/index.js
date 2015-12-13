@@ -1,4 +1,5 @@
 export {requireAuthentication} from './components/AuthenticatedComponent';
+export {default as BlissComponent} from './components/BlissComponent';
 export {default as Btn} from './components/Btn';
 export {default as Modal} from './components/Modal';
 export {default as Pagination} from './components/Pagination';

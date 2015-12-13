@@ -14,6 +14,12 @@ export default class ContextMenu extends Component {
 	}
 
 	componentDidMount() {
+		setTimeout(()=> {
+			this.adjustMenuPosition();
+		}, 100);
+	}
+
+	componentWillReceiveProps() {
 		this.adjustMenuPosition();
 	}
 
@@ -34,14 +40,15 @@ export default class ContextMenu extends Component {
 		});
 	}
 
-	openMenu(e) {
+	openMenu() {
+		this.adjustMenuPosition();
 		this.cancelClosing();
 		this.setState({open: true});
-	};
+	}
 
-	closeMenu(e) {
+	closeMenu() {
 		this.setState({open: false});
-	};
+	}
 
 	getToggleClass() {
 		return classNames({
@@ -66,46 +73,46 @@ export default class ContextMenu extends Component {
 
 	render() {
 		return (
-			<div className="ContextMenu" ref="component" onClick={e=>{e.preventDefault()}}>
+			<div className="ContextMenu" ref="component" onClick={e=>{e.preventDefault();}}>
 				<a
-					onClick={e => {e.preventDefault()}}
+					onClick={e => {e.preventDefault();}}
 					onFocus={this.openMenu.bind(this)}
 					onBlur={this.startMenuClosing.bind(this)}
-					onMousedown={e=>{debugger; e.preventDefault();}}
+					onMousedown={e=>{ e.preventDefault();}}
 					href="#"
 					className={this.getToggleClass()} ref="toggle">
 					<i className="fa fa-fw fa-ellipsis-h"></i>
 				</a>
 				<ul className={this.getMenuClass()} ref="menu">
 					{
-						this.props.items.map((item)=>{
+						this.props.items.map((item)=> {
 							return (
-							<li key={hash(item)}>
-								{item.to &&
-								<Link
-									to={item.to ? item.to : '/'}
-									className="ContextMenu-menuItem"
-									onFocus={this.openMenu.bind(this)}
-									onBlur={this.startMenuClosing.bind(this)}
-									onClick={e=>{this.closeMenu();}}
-								>
-									{item.title}
-								</Link>}
-								{item.handler &&
-								<a
-									href="#"
-									className="ContextMenu-menuItem"
-									onFocus={this.openMenu.bind(this)}
-									onBlur={this.startMenuClosing.bind(this)}
-									onClick={e=>{this.closeMenu(); item.handler(e, this.props.subject);}}
-								>
-									{item.title}
-								</a>}
+								<li key={hash(item)}>
+									{item.to &&
+									<Link
+										to={item.to ? item.to : '/'}
+										className="ContextMenu-menuItem"
+										onFocus={this.openMenu.bind(this)}
+										onBlur={this.startMenuClosing.bind(this)}
+										onClick={()=>{this.closeMenu();}}
+									>
+										{item.title}
+									</Link>}
+									{item.handler &&
+									<a
+										href="#"
+										className="ContextMenu-menuItem"
+										onFocus={this.openMenu.bind(this)}
+										onBlur={this.startMenuClosing.bind(this)}
+										onClick={e=>{this.closeMenu(); item.handler(e, this.props.subject);}}
+									>
+										{item.title}
+									</a>}
 
-							</li>
-								);
-							})
-						}
+								</li>
+							);
+						})
+					}
 					{this.props.children}
 				</ul>
 			</div>

@@ -10,13 +10,13 @@ export function requireAuthentication(Component) {
 			this.checkAuth();
 		}
 
-		componentWillReceiveProps(nextProps) {
+		componentWillReceiveProps() {
 			this.checkAuth();
 		}
 
 		checkAuth() {
 			if (!this.props.user) {
-				let redirectAfterLogin = this.props.location.pathname;
+				const redirectAfterLogin = this.props.location.pathname;
 				this.props.dispatch(pushState(null, `/login?next=${redirectAfterLogin}`));
 			}
 		}
@@ -24,14 +24,14 @@ export function requireAuthentication(Component) {
 		render() {
 			return this.props.user
 				? (<Component {...this.props}/>)
-				: null
+				: null;
 		}
 	}
 
 	const mapStateToProps = (state) => {
 		return {
 			user: state.auth.user
-		}
+		};
 	};
 
 	return connect(mapStateToProps)(AuthenticatedComponent);
