@@ -8,16 +8,14 @@ export default class Modal extends React.Component {
 		const element = document.getElementById(this.props.on);
 		if (element) {
 			return (
-				<ReactGateway to={element}>
-					<ReactModal2
-						onClose={this.props.onClose}
-						closeOnEsc={this.props.closeOnEsc}
-						closeOnBackdropClick={this.props.closeOnBackdropClick}
-						backdropClassName='Modal'
-						modalClassName='Modal-content'>
-						{this.props.children}
-					</ReactModal2>
-				</ReactGateway>
+				<ReactModal2
+					onClose={this.props.onClose}
+					closeOnEsc={this.props.closeOnEsc}
+					closeOnBackdropClick={this.props.closeOnBackdropClick}
+					backdropClassName='Modal'
+					modalClassName='Modal-content'>
+					{this.props.children}
+				</ReactModal2>
 			);
 		}
 		return null;
@@ -33,5 +31,6 @@ Modal.propTypes = {
 Modal.defaultProps = {
 	closeOnEsc: true,
 	closeOnBackdropClick: true,
-	onClose: ()=> {}
+	onClose: ()=> {
+	}
 };

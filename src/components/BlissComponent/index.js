@@ -30,6 +30,6 @@ export default class BlissComponent extends React.Component {
 }
 
 BlissComponent.propTypes = {
-	name: React.PropTypes.string.isRequired,
-	tag: React.PropTypes.oneOf([React.PropTypes.string, React.PropTypes.func]).isRequired
+	name: React.PropTypes.string.isRequired
+	//tag: React.PropTypes.oneOf([React.PropTypes.string, React.PropTypes.func]).isRequired
 };
