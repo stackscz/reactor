@@ -11,11 +11,13 @@ export default class BlissComponent extends React.Component {
 		var classes = {
 			[name]: true
 		};
-		_.each(modifiers.split(/\s/i), (mod) => {
-			if (mod) {
-				classes[name + '--' + mod] = true;
-			}
-		});
+		if (modifiers) {
+			_.each(modifiers.split(/\s/i), (mod) => {
+				if (mod) {
+					classes[name + '--' + mod] = true;
+				}
+			});
+		}
 		return classNames(classes);
 	}
 

@@ -1,15 +1,15 @@
 {
   "name": "@stackscz/reactor",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "react + redux frontend codebase",
   "main": "lib/index.js",
   "scripts": {
     "lint": "eslint --config ./node_modules/@stackscz/webpack-configs/react/.eslintrc.js",
     "dev": "node ./node_modules/@stackscz/webpack-configs/react/dev-server",
     "build:dev": "webpack --config ./node_modules/@stackscz/webpack-configs/react/dev",
-    "build:dev:watch": "webpack --watch --config ./node_modules/@stackscz/webpack-configs/react/dev",
+    "build:dev:watch": "webpack --progress --watch --config ./node_modules/@stackscz/webpack-configs/react/dev",
     "build:prod": "webpack --progress --colors --config ./node_modules/@stackscz/webpack-configs/react/prod",
-    "build:prod:watch": "webpack --watch --progress --colors --config ./node_modules/@stackscz/webpack-configs/react/prod",
+    "build:prod:watch": "webpack --progress --watch --progress --colors --config ./node_modules/@stackscz/webpack-configs/react/prod",
     "build": "npm run build:dev && npm run build:prod"
   },
   "repository": {
@@ -25,19 +25,26 @@
   "dependencies": {
     "bootstrap": "^3.3.5",
     "classnames": "^2.2.1",
+    "formsy-material-ui": "^0.3.3",
+    "formsy-react": "^0.17.0",
+    "formsy-react-components": "^0.6.3",
     "history": "^1.13.1",
     "lodash": "^3.10.1",
+    "material-ui": "^0.14.0",
     "object-hash": "^0.9.3",
-    "react": "^0.14.2",
+    "react": "^0.14.3",
+    "react-addons-css-transition-group": "^0.14.3",
     "react-gateway": "git+https://github.com/brabeji/react-gateway#server-renderable",
     "react-modal2": "^2.0.0",
     "react-redux": "^4.0.0",
     "react-router": "^1.0.2",
+    "react-tap-event-plugin": "^0.2.1",
     "redux": "^3.0.4",
     "redux-router": "v1.0.0-beta5"
   },
   "devDependencies": {
     "@stackscz/webpack-configs": "git+http://github.com/stackscz/webpack-configs#0.1.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-preset-es2015": "^6.1.18",
     "babel-preset-react": "^6.1.18",
     "babel-preset-stage-0": "^6.1.18",

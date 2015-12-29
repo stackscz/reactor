@@ -5,3 +5,4 @@ export {default as Modal} from './components/Modal';
 export {default as Pagination} from './components/Pagination';
 export {default as LanguageSelector} from './components/LanguageSelector';
 export {default as ContextMenu} from './components/ContextMenu';
+export {default as Form} from './components/Form';

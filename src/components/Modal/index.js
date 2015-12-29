@@ -5,20 +5,16 @@ import ReactGateway from 'react-gateway';
 export default class Modal extends React.Component {
 
 	render() {
-		const element = document.getElementById(this.props.on);
-		if (element) {
-			return (
-				<ReactModal2
-					onClose={this.props.onClose}
-					closeOnEsc={this.props.closeOnEsc}
-					closeOnBackdropClick={this.props.closeOnBackdropClick}
-					backdropClassName='Modal'
-					modalClassName='Modal-content'>
-					{this.props.children}
-				</ReactModal2>
-			);
-		}
-		return null;
+		return (
+			<ReactModal2
+				onClose={this.props.onClose}
+				closeOnEsc={this.props.closeOnEsc}
+				closeOnBackdropClick={this.props.closeOnBackdropClick}
+				backdropClassName='Modal'
+				modalClassName='Modal-content'>
+				{this.props.children}
+			</ReactModal2>
+		);
 	}
 }
 
