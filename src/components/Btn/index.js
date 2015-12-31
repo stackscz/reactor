@@ -12,24 +12,19 @@ export default class Btn extends React.Component {
 			btnTag = 'a';
 		}
 
-		//debugger; // eslint-disable-line no-debugger
 		var newChildren = children;
 		if (!_.isArray(newChildren)) {
 			newChildren = [children];
 		}
 		if (this.props.icon) {
-			newChildren.unshift(<i className={'fa fa-fw fa-' + this.props.icon}/>);
+			newChildren.unshift(<i key="icon-before" className={'fa fa-fw fa-' + this.props.icon}/>);
 		}
-		//_.each(newChildren, (child) => {
-		//	child.key = child.name;
-		//});
-
 
 		return this.props.to ?
 			(<BlissComponent tag={Link} name="Btn" {...other} onlyActiveOnIndex={true}
 							 activeClassName="isActive">{newChildren}</BlissComponent>)
 			:
-			(<BlissComponent tag={btnTag} name="Btn" {...other} >{newChildren}</BlissComponent>);
+			(<BlissComponent tag={btnTag} name="Btn" {...other} href={href} >{newChildren}</BlissComponent>);
 	}
 
 
